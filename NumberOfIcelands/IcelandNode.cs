@@ -2,15 +2,15 @@
 
 namespace NumberOfIcelands
 {
-    public class IcelandNode : SerialTreeNode<IcelandNode>
+    public class GridNode : SerialTreeNode<GridNode>
     {
-        public IcelandNode() { }
+        public Place Place { get; }
 
-        public IcelandNode(int type, params IcelandNode[] children) : base(children)
+        public GridNode() { }
+
+        public GridNode(int type, params GridNode[] children) : base(children)
         {
-            Type = type;
+            Place = new Place(type);
         }
-
-        public int Type { get; }
     }
 }
